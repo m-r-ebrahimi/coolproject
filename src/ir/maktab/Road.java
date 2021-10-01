@@ -16,6 +16,10 @@ public class Road {
     public Road() {
     }
 
+    public Road(int id) {
+        this.id = id;
+    }
+
     public Road(int id, String name, int origin, int destination, LinkedList<Integer> through, int speedLimit, int length, boolean biDirectional) {
         this.id = id;
         this.name = name;
@@ -96,7 +100,7 @@ public class Road {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Road road = (Road) o;
-        return id == road.id && origin == road.origin && destination == road.destination && speedLimit == road.speedLimit && length == road.length && biDirectional == road.biDirectional && Objects.equals(name, road.name) && Objects.equals(through, road.through);
+        return id == road.id;
     }
 
     @Override

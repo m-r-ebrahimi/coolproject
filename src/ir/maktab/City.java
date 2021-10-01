@@ -9,6 +9,10 @@ public class City {
     public City() {
     }
 
+    public City(int id) {
+        this.id = id;
+    }
+
     public City(int id, String name) {
         this.id = id;
         this.name = name;
@@ -35,7 +39,7 @@ public class City {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         City city = (City) o;
-        return id == city.id && Objects.equals(name, city.name);
+        return id == city.id;
     }
 
     @Override
