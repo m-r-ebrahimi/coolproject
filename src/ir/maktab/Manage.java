@@ -87,7 +87,6 @@ public class Manage {
         if (road.getDestination() == destinationId)
             return road.getId() + " ";
         else {
-
             ArrayList<Road> tempRoads = new ArrayList<Road>();
             for (var tmpRoad : roads) {
                 if (tmpRoad.getOrigin() == road.getDestination())
