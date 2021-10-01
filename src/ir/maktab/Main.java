@@ -18,6 +18,8 @@ public class Main {
         manager.addRoad(new Road(5, "mn", 4, 5, null, 120, 1000, true));
         manager.addRoad(new Road(7, "vc", 5, 6, null, 120, 1000, true));
         manager.addRoad(new Road(12, "we", 6, 8, null, 120, 1000, true));
-        System.out.println(manager.getPaths(361, 251));
+
+
+        System.out.println(manager.getPathInfo(manager.getPaths(361, 251)));
     }
 }

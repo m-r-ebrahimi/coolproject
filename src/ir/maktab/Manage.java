@@ -97,4 +97,28 @@ public class Manage {
         }
         return "";
     }
+
+    public ArrayList<String> getPathInfo(ArrayList<String> paths) {
+        ArrayList<String> result = new ArrayList<String>();
+        double time = 0;
+        for (var path : paths) {
+            String[] roadIds = path.split(" ");
+            String tmpOrigin = "";
+            String tmpDestination = "";
+            StringBuilder roadsName = new StringBuilder();
+            for (int i = 0; i < roadIds.length; i++) {
+                Road tmpRoad = findRoadById(Integer.parseInt(roadIds[i]));
+                if (i == 0)
+                    tmpOrigin = findCityById(tmpRoad.getOrigin()).getName();
+                else if (i == roadIds.length - 1)
+                    tmpDestination = findCityById(tmpRoad.getOrigin()).getName();
+                roadsName.append(findRoadById(tmpRoad.getId()).getName()).append(" ");
+                time += (double)tmpRoad.getLength() / tmpRoad.getSpeedLimit();
+            }
+
+            result.add(tmpOrigin + " : " + tmpDestination + " via Road " + roadsName + " : takes " + time + " ");
+
+        }
+        return result;
+    }
 }
