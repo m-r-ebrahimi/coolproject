@@ -9,7 +9,6 @@ public class Manage {
     private ArrayList<City> cities = new ArrayList<City>();
     private ArrayList<Road> roads = new ArrayList<Road>();
 
-
     public void addCity(City city) {
         cities.add(city);
     }
@@ -75,9 +74,9 @@ public class Manage {
             tempPath.add(getDestination(roads, destinationId));
         }
         ArrayList<String> result = new ArrayList<String>();
-        for (var path:tempPath) {
-            String[] roadId=path.split(" ");
-            if(findRoadById(Integer.parseInt(roadId[roadId.length-1])).getDestination()==destinationId)
+        for (var path : tempPath) {
+            String[] roadId = path.split(" ");
+            if (findRoadById(Integer.parseInt(roadId[roadId.length - 1])).getDestination() == destinationId)
                 result.add(path);
         }
         return result;
@@ -93,7 +92,7 @@ public class Manage {
                     tempRoads.add(tmpRoad);
             }
             for (var r : tempRoads) {
-                return road.getId()+" " + getDestination(r, destinationId);
+                return road.getId() + " " + getDestination(r, destinationId);
             }
         }
         return "";
